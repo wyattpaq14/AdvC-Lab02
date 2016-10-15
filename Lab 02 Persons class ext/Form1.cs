@@ -14,20 +14,31 @@ namespace Lab_02_Persons_class_ext
         public Form1()
         {
             InitializeComponent();
+            
         }
-        //Declare List1 as the PersonList data type to store people in a list
+        //Declare List1 of the PersonList data type to store people in a list
         public PersonList List1 = new PersonList();
-        int Count;
 
 
 
         private void btnCreatePerson_Click(object sender, EventArgs e)
         {
             Person person1 = new Person(txtFName.Text, txtLName.Text, txtGpa.Text, txtDob.Text, txtSalary.Text, txtPhoneNumber.Text, txtHireDate.Text);
-            List1.add(person1);
-            MessageBox.Show("Person added!");
+            //Start validation
+            if (Validation.FieldCheck(txtFName) && Validation.FieldCheck(txtLName) && Validation.FieldCheck(txtGpa) && Validation.FieldCheck(txtDob) && Validation.FieldCheck(txtSalary) && Validation.FieldCheck(txtPhoneNumber))
+            {
+                List1.add(person1);
+                MessageBox.Show("Person added!");
+                clearFields();
+            }
             
-            
+            else {
+
+            }
+
+
+
+
 
         }
 
@@ -37,7 +48,32 @@ namespace Lab_02_Persons_class_ext
             Person p2 = new Person();
             p2 = List1[getname];
             p2.getPersonInfo();
+            clearFields();
 
+
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+
+
+
+
+
+
+        private void clearFields()
+        {
+            txtDob.Text = "";
+            txtFName.Text = "";
+            txtGpa.Text = "";
+            txtHireDate.Text = "";
+            txtLastNameSearch.Text = "";
+            txtLName.Text = "";
+            txtPhoneNumber.Text = "";
+            txtSalary.Text = "";
         }
     }
 }

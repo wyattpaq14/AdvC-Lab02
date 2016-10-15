@@ -46,6 +46,7 @@
             this.lblHiredate = new System.Windows.Forms.Label();
             this.txtLastNameSearch = new System.Windows.Forms.TextBox();
             this.lblLastNameSearch = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFname
@@ -94,7 +95,7 @@
             // btnSearch
             // 
             this.btnSearch.AllowDrop = true;
-            this.btnSearch.Location = new System.Drawing.Point(15, 472);
+            this.btnSearch.Location = new System.Drawing.Point(15, 473);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(235, 23);
             this.btnSearch.TabIndex = 98;
@@ -184,7 +185,7 @@
             // 
             // txtLastNameSearch
             // 
-            this.txtLastNameSearch.Location = new System.Drawing.Point(150, 429);
+            this.txtLastNameSearch.Location = new System.Drawing.Point(150, 430);
             this.txtLastNameSearch.Name = "txtLastNameSearch";
             this.txtLastNameSearch.Size = new System.Drawing.Size(100, 20);
             this.txtLastNameSearch.TabIndex = 10;
@@ -192,17 +193,29 @@
             // lblLastNameSearch
             // 
             this.lblLastNameSearch.AutoSize = true;
-            this.lblLastNameSearch.Location = new System.Drawing.Point(12, 436);
+            this.lblLastNameSearch.Location = new System.Drawing.Point(12, 437);
             this.lblLastNameSearch.Name = "lblLastNameSearch";
             this.lblLastNameSearch.Size = new System.Drawing.Size(58, 13);
             this.lblLastNameSearch.TabIndex = 16;
             this.lblLastNameSearch.Text = "Last Name";
             // 
+            // btnClear
+            // 
+            this.btnClear.AllowDrop = true;
+            this.btnClear.Location = new System.Drawing.Point(15, 520);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(235, 23);
+            this.btnClear.TabIndex = 100;
+            this.btnClear.Text = "Clear Fields";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 596);
+            this.ClientSize = new System.Drawing.Size(271, 561);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtLastNameSearch);
             this.Controls.Add(this.lblLastNameSearch);
             this.Controls.Add(this.txtHireDate);
@@ -248,6 +261,7 @@
         private System.Windows.Forms.Label lblHiredate;
         private System.Windows.Forms.TextBox txtLastNameSearch;
         private System.Windows.Forms.Label lblLastNameSearch;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

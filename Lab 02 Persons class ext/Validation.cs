@@ -27,10 +27,12 @@ namespace Lab_02_Persons_class_ext
         }
 
 
-        public static bool NameCheck(TextBox txtbx)
+        public static bool FieldCheck(TextBox txtbx)
         {
+            TextBox currentTxtBox = txtbx;
             if (txtbx.Text == "")
             {
+                MessageBox.Show("Please make sure the " + txtbx.Name + " field isn't empty!", "Empty field!");
                 return false;
 
             }

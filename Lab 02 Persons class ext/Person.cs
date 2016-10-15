@@ -126,11 +126,15 @@ namespace Lab_02_Persons_class_ext
         {
             get
             {
+                
                 return hiredate;
             }
             set
             {
-
+                if (hiredate == "")
+                {
+                    hiredate = DateTime.Today.ToString("d");
+                }
                 hiredate = value;
             }
 

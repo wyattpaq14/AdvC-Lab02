@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Lab_02_Persons_class_ext
 {
-    public class Validation
+    public static class Validation
     {
         private static string message = "Error";
 

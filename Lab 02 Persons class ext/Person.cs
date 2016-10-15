@@ -9,8 +9,15 @@ namespace Lab_02_Persons_class_ext
 {
     public class Person
     {
-        private string name; //Fields for Name and ID
-        private string idnum;
+        //Declare variables that deal with person information
+        private string fname;
+        private string lname;
+        private string gpa;
+        private string dob;
+        private string salary;
+        private string phonenumber;
+        private string hiredate;
+
 
         //Empty constructor
         public Person()
@@ -19,52 +26,122 @@ namespace Lab_02_Persons_class_ext
 
 
         //Constructors
-        public Person(string name)
+        public Person(string fname, string lname, string gpa, string dob, string salary, string phonenumber, string hiredate)
         {
-            this.Name = name;
-            this.Idnum = "9999";
-
+            this.FName = fname;
+            this.LName = lname;
+            this.Gpa = gpa;
+            this.Dob = dob;
+            this.Salary = salary;
+            this.PhoneNumber = phonenumber;
+            this.HireDate = hiredate;
         }
 
-        public Person(string name, string idnum)
-        {
-            this.Name = name;
-            this.Idnum = idnum;
-        }
 
         //Properties
-        public string Name
+        public string FName
         {
             get
             {
 
-                return name;
+                return fname;
             }
             set
             {
-                name = value;
+                fname = value;
             }
         }
 
-
-        public string Idnum
+        public string LName
         {
             get
             {
-                return idnum;
+                return lname;
             }
             set
             {
 
-                idnum = value;
+                lname = value;
+            }
+
+        }
+
+        public string Gpa
+        {
+            get
+            {
+                return gpa;
+            }
+            set
+            {
+
+                gpa = value;
+            }
+
+        }
+
+        public string Dob
+        {
+            get
+            {
+                return dob;
+            }
+            set
+            {
+
+                dob = value;
+            }
+
+        }
+
+        public string Salary
+        {
+            get
+            {
+                return salary;
+            }
+            set
+            {
+
+                salary = value;
+            }
+
+        }
+
+        public string PhoneNumber
+        {
+            get
+            {
+                return phonenumber;
+            }
+            set
+            {
+
+                phonenumber = value;
+            }
+
+        }
+
+        public string HireDate
+        {
+            get
+            {
+                return hiredate;
+            }
+            set
+            {
+
+                hiredate = value;
             }
 
         }
 
         //Methods
-        public string getPersonInfo()  //method to display name and ID
+
+        //Display all information that was entered
+        public void getPersonInfo()
         {
-            return "The New person's name is " + name + " and their ID is " + idnum;
+            MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone NUmber:" + phonenumber + "\n" + "Hire Date:" + hiredate + "\n", fname + " " + lname + "'s Information"); 
         }
     }
 }

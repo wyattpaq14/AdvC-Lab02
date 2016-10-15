@@ -23,26 +23,21 @@ namespace Lab_02_Persons_class_ext
 
         private void btnCreatePerson_Click(object sender, EventArgs e)
         {
-            Person person1 = new Person(txtName.Text, txtId.Text);
-
+            Person person1 = new Person(txtFName.Text, txtLName.Text, txtGpa.Text, txtDob.Text, txtSalary.Text, txtPhoneNumber.Text, txtHireDate.Text);
             List1.add(person1);
-            Count = List1.Count;
-
-            MessageBox.Show("A new person has been added to the list. There are a total of " + Count + " in the list");
-
-            lblOutput.Text = person1.getPersonInfo();
-
-
-
+            MessageBox.Show("Person added!");
             
+            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string getname = txtName.Text;
+            string getname = txtLastNameSearch.Text;
             Person p2 = new Person();
             p2 = List1[getname];
-            lblOutput.Text = p2.getPersonInfo();
+            p2.getPersonInfo();
+
         }
     }
 }

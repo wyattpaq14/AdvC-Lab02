@@ -30,8 +30,8 @@ namespace Lab_02_Persons_class_ext
         {
             this.FName = fname;
             this.LName = lname;
-            this.Gpa = gpa;
-            this.Dob = dob;
+            this.Gpa = Validation.Gpa;
+            this.Dob = Validation.DOBCheck(dob);
             this.Salary = salary;
             this.PhoneNumber = phonenumber;
 

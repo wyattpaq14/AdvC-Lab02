@@ -26,6 +26,12 @@ namespace Lab_02_Persons_class_ext
 
         }
 
+
+
+
+
+
+
         //Check to see if fields are not empty, returns which box needs to be entered
         public static bool FieldCheck(TextBox txtbx)
         {
@@ -43,16 +49,17 @@ namespace Lab_02_Persons_class_ext
 
 
 
-        //Check the hiredate and set it based on its validity
+        //Check the hiredate and set it based on validity
         public static string HireDateCheck(string hiredate)
         {
-            if (isValidDate(hiredate))
+            if (isValidDate(hiredate, "Hire"))
             {
-                return DateTime.Today.ToString("d");
+                return hiredate;
             }
             else
             {
-                return hiredate;
+                return DateTime.Today.ToString("d");
+
             }
         }
 
@@ -60,45 +67,60 @@ namespace Lab_02_Persons_class_ext
         //Method that returns date of birth
         public static string DOBCheck(string dob)
         {
-            if (isValidDate(dob))
+            if (isValidDate(dob, "DOB"))
             {
-                return "Error!";
+                return dob;
+
             }
             else
             {
-                return dob;
+                return "Error!";
             }
         }
         //Method that returns GPA
         public static string GPACheck(string gpa)
         {
-            if (isValidDate(gpa))
+            if (isValidGPA(gpa))
             {
-                return "Error!";
+                return gpa;
             }
             else
             {
-                return gpa;
+                return "Error!";
+
             }
         }
         //Method that returns salary
         public static string SalaryCheck(string salary)
         {
-            if (isValidDate(salary))
+            if (isValidSalary(salary))
             {
-                return "Error!";
+
+                return salary;
             }
             else
             {
-                return salary;
+                return "Error!";
             }
         }
+        //Method that returns names
+        public static string NameCheck(string name)
+        {
+
+            if (isValidName(name))
+            {
+
+                return name;
+            }
+            else
+            {
+                return "Error!";
+            }
 
 
-
-
+        }
         //Check if a date is valid
-        private static bool isValidDate(string date)
+        public static bool isValidDate(string date, string dateField)
         {
             DateTime result;
             if (DateTime.TryParse(date, out result))
@@ -107,16 +129,30 @@ namespace Lab_02_Persons_class_ext
             }
             else
             {
-                MessageBox.Show("Date isn't valid!", "Date error!");
+                MessageBox.Show(dateField + " date isn't valid!", "Date error!");
                 return false;
             }
         }
 
         //See if GPA is valid
-        private static bool isValidGPA(string gpa)
+        public static bool isValidGPA(string gpa)
         {
-            decimal stringConversion = Convert.ToDecimal(gpa);
-            if (stringConversion > 0 && stringConversion < 4)
+            decimal stringConversion = 0;
+            try
+            {
+                stringConversion = Convert.ToDecimal(gpa);
+            }
+            catch(FormatException)
+            {
+                //Catch blank entry
+            }
+            catch (OverflowException)
+            {
+                //Catch large entry
+            }
+
+
+            if (stringConversion >= 0 && stringConversion <= 4)
             {
                 return true;
             }
@@ -128,9 +164,22 @@ namespace Lab_02_Persons_class_ext
         }
 
         //See if sallary is valid
-        private static bool isValidSalary(string salary)
+        public static bool isValidSalary(string salary)
         {
-            decimal stringConversion = Convert.ToDecimal(salary);
+            decimal stringConversion = 0;
+            try
+            {
+                stringConversion = Convert.ToDecimal(salary);
+            }
+            catch (FormatException)
+            {
+                //Catch blank entry
+            }
+            catch (OverflowException)
+            {
+                //Catch large entry
+            }
+
             if (stringConversion > 0 && stringConversion < 113000000000)
             {
                 return true;
@@ -138,6 +187,22 @@ namespace Lab_02_Persons_class_ext
             else
             {
                 MessageBox.Show("Sallary isn't valid!", "Sallary error!");
+                return false;
+            }
+        }
+
+
+
+        //See if a name is valid
+        public static bool isValidName(string name)
+        {
+            if (name.Length > 0 && name.Length < 20)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Your name was either too short, or too long!", "Name error!");
                 return false;
             }
         }

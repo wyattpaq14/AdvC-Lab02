@@ -14,7 +14,7 @@ namespace Lab_02_Persons_class_ext
         public Form1()
         {
             InitializeComponent();
-            
+
         }
         //Declare List1 of the PersonList data type to store people in a list
         public PersonList List1 = new PersonList();
@@ -25,14 +25,15 @@ namespace Lab_02_Persons_class_ext
         {
             Person person1 = new Person(txtFName.Text, txtLName.Text, txtGpa.Text, txtDob.Text, txtSalary.Text, txtPhoneNumber.Text, txtHireDate.Text);
             //Start validation
-            if (Validation.FieldCheck(txtFName) && Validation.FieldCheck(txtLName) && Validation.FieldCheck(txtGpa) && Validation.FieldCheck(txtDob) && Validation.FieldCheck(txtSalary) && Validation.FieldCheck(txtPhoneNumber))
+            if (fieldCheck())
             {
                 List1.add(person1);
                 MessageBox.Show("Person added!");
                 clearFields();
             }
-            
-            else {
+
+            else
+            {
                 //Placeholder for later
             }
 
@@ -71,5 +72,22 @@ namespace Lab_02_Persons_class_ext
             txtPhoneNumber.Text = "";
             txtSalary.Text = "";
         }
+
+        private bool fieldCheck()
+        {
+            if (Validation.isValidName(txtFName.Text) && Validation.isValidName(txtLName.Text) && Validation.isValidGPA(txtGpa.Text) && Validation.isValidDate(txtDob.Text, "DOB") && Validation.isValidSalary(txtSalary.Text) && Validation.FieldCheck(txtPhoneNumber))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+            
+        }
+
+
     }
+
 }

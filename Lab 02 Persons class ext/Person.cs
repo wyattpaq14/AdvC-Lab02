@@ -28,11 +28,11 @@ namespace Lab_02_Persons_class_ext
         //Constructors
         public Person(string fname, string lname, string gpa, string dob, string salary, string phonenumber, string hiredate)
         {
-            this.FName = fname;
-            this.LName = lname;
-            this.Gpa = Validation.Gpa;
+            this.FName = Validation.NameCheck(fname);
+            this.LName = Validation.NameCheck(lname);
+            this.Gpa = Validation.GPACheck(gpa);
             this.Dob = Validation.DOBCheck(dob);
-            this.Salary = salary;
+            this.Salary = Validation.SalaryCheck(salary);
             this.PhoneNumber = phonenumber;
 
             //Check if hire date, and set it to todays date if it isn't set
@@ -144,7 +144,7 @@ namespace Lab_02_Persons_class_ext
         //Display all information that was entered
         public void getPersonInfo()
         {
-            MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone NUmber:" + phonenumber + "\n" + "Hire Date:" + hiredate + "\n", fname + " " + lname + "'s Information");
+            MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone Number: " + phonenumber + "\n" + "Hire Date: " + hiredate + "\n", fname + " " + lname + "'s Information");
         }
     }
 }

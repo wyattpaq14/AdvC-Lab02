@@ -11,7 +11,7 @@ namespace Lab_02_Persons_class_ext
     {
         private static string message = "Error";
 
-
+        //Property
         public static string Message
         {
             get
@@ -26,7 +26,7 @@ namespace Lab_02_Persons_class_ext
 
         }
 
-
+        //Method
         public static bool FieldCheck(TextBox txtbx)
         {
             TextBox currentTxtBox = txtbx;
@@ -42,6 +42,26 @@ namespace Lab_02_Persons_class_ext
             }
 
 
+
+        }
+
+        //Check the hiredate and set it based on its validity
+        public static string HireDateCheck(string hiredate)
+        {
+            if (hiredate == "")
+            {
+                return DateTime.Today.ToString("d");
+            }
+            else
+            {
+                return hiredate;
+            }
+        }
+
+
+        //Determin which field is empty
+        public static void GetEmptyFieldName()
+        {
 
         }
     }

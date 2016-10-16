@@ -34,7 +34,9 @@ namespace Lab_02_Persons_class_ext
             this.Dob = dob;
             this.Salary = salary;
             this.PhoneNumber = phonenumber;
-            this.HireDate = hiredate;
+
+            //Check if hire date, and set it to todays date if it isn't set
+            this.HireDate = Validation.HireDateCheck(hiredate);
         }
 
 
@@ -126,15 +128,12 @@ namespace Lab_02_Persons_class_ext
         {
             get
             {
-                
+
                 return hiredate;
             }
             set
             {
-                if (hiredate == "")
-                {
-                    hiredate = DateTime.Today.ToString("d");
-                }
+
                 hiredate = value;
             }
 
@@ -145,7 +144,7 @@ namespace Lab_02_Persons_class_ext
         //Display all information that was entered
         public void getPersonInfo()
         {
-            MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone NUmber:" + phonenumber + "\n" + "Hire Date:" + hiredate + "\n", fname + " " + lname + "'s Information"); 
+            MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone NUmber:" + phonenumber + "\n" + "Hire Date:" + hiredate + "\n", fname + " " + lname + "'s Information");
         }
     }
 }

@@ -33,12 +33,8 @@ namespace Lab_02_Persons_class_ext
             }
             
             else {
-
+                //Placeholder for later
             }
-
-
-
-
 
         }
 

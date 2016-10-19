@@ -48,7 +48,7 @@ namespace Lab_02_Persons_class_ext
             {
                 foreach (Person p in peoplelist)
                 {
-                    if (p.FName == name)
+                    if (p.LName == name)
                     {
                         return p;
                     }

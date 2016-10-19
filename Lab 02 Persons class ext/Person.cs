@@ -144,8 +144,18 @@ namespace Lab_02_Persons_class_ext
         //Display all information that was entered
         public void getPersonInfo()
         {
-            MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone Number: " + phonenumber + "\n" + "Hire Date: " + hiredate + "\n", fname + " " + lname + "'s Information");
+            try
+            {
+
+
+                MessageBox.Show("First Name: " + fname + "\n" + "Last Name: " + lname + "\n" + "GPA: " + gpa + "\n" + "DOB: " + dob + "\n" + "Salary: " + salary + "\n" + "Phone Number: " + phonenumber + "\n" + "Hire Date: " + hiredate + "\n", fname + " " + lname + "'s Information");
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Error!", "Error!");
+            }
         }
+
     }
 }
 

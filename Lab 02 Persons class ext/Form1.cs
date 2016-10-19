@@ -44,7 +44,17 @@ namespace Lab_02_Persons_class_ext
             string getname = txtLastNameSearch.Text;
             Person p2 = new Person();
             p2 = List1[getname];
-            p2.getPersonInfo();
+            try
+            {
+
+                p2.getPersonInfo();
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Error!", "Error!");
+            }
+
             clearFields();
 
 
@@ -84,7 +94,7 @@ namespace Lab_02_Persons_class_ext
                 return false;
             }
 
-            
+
         }
 
 
